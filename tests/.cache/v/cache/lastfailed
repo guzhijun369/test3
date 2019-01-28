@@ -1,0 +1,7 @@
+{
+  "test_login.py::test_band_google_login": true,
+  "test_login.py::test_login": true,
+  "test_release_ad.py::test_delete_ad": true,
+  "test_transaction.py::test_ad_detail": true,
+  "test_wallet.py::test_withdraw_internal": true
+}
