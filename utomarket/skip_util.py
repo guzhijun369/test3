@@ -141,3 +141,5 @@ def progress_order_o(browser):
     url = 'https://dev.utomarket.com:9094/#/trade/step'
     url_true = get_current_url(browser)
     assert url in url_true
+
+

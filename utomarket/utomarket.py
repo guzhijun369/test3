@@ -7,8 +7,8 @@ from selenium.webdriver import DesiredCapabilities
 from selenium.webdriver.common.proxy import Proxy, ProxyType
 from selenium.common.exceptions import WebDriverException
 
-from .settings import Settings
-from .login_util import login_user, login_user_two
+# from .settings import Settings
+from .login_util import login_user, login_user_two, sliding_verification_o
 from .wallet_util import enter_wallet_home, do_withdraw_internal, after_withdraw
 from .logout_util import *
 from .release_ad import *
@@ -360,5 +360,10 @@ class Utomarket:
 
     def delete_ad(self):
         delete_ad_o(self.browser)
+
+        return self
+
+    def sliding_verification(self):
+        sliding_verification_o(self.browser)
 
         return self

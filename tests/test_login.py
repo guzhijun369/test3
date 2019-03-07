@@ -3,15 +3,19 @@ from utomarket.util import get_page_title, explicit_wait
 
 
 def test_login():  # 登录
+    # username = 'test130'
+    # password = '3201'
+    # ins = Utomarket(username, password)
+    # ins.login().sliding_verification()
     cases = [
-        ('test129', '3201', 'success'),
+        ('test130', '3201', 'success'),
         ('test119', '3202', '用户名密码错误'),
-        ('test1120', '3202', '用户不存在')
+         ('test1120', '3202', '用户不存在')
     ]
 
     for case in cases:
         ins = Utomarket(case[0], case[1])
-        ins.login()
+        ins.login().sliding_verification()
 
         if case[2] == 'success':
             explicit_wait(ins.browser, 'TC', 'P2P交易 - 乌托市场(TEST)')
@@ -21,13 +25,9 @@ def test_login():  # 登录
             span_errmsg = ins.browser.find_element_by_class_name('ant-alert-message').text
             assert span_errmsg == '用户名或密码错误'
             ins.browser.close()
-        elif case[2] == '用户不存在':
-            span_errmsg = ins.browser.find_element_by_class_name('ant-alert-message').text
-            assert span_errmsg == '用户不存在'
-            ins.browser.close()
-        # def test_band_google_login():
-        #     ins = Utomarket('niriliya', '3201')
-        #     ins.login().my_center('个人中心').band_google('3201').logout('退出登录').login()
+    # def test_band_google_login():
+    #     ins = Utomarket('niriliya', '3201')
+    #     ins.login().my_center('个人中心').band_google('3201').logout('退出登录').login()
 
 
 

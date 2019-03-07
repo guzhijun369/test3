@@ -61,20 +61,20 @@ def release_ad_o(browser, country='中国', currency='人民币', transaction_ty
     assert transaction_type_text == '(%s)' % transaction_type
 
 
-    # def remove_ad_o(browser):
-    #     explicit_wait(browser, 'VOEL', ["//span[contains(text(),'广告类型')]", 'xpath'])
-    #     remove_btns = browser.find_elements_by_class_name('text-green')
-    #     for remove_btn in remove_btns:
-    #         item.click()
-    #         popup_o("操作成功")
-    #         time.sleep(2)
-    #
-    #
-    # def delete_ad_o(browser):
-    #     delete_btn = browser.find_elements_by_xpath("//span[contains(text(),'删除')]/..")
-    #     for item in delete_btn:
-    #         item.click()
-    #         confirm_btn = browser.find_elements_by_xpath("//span[text()='确认']/..")
-    #         confirm_btn.click()
-    #         popup_o("操作成功")
-    #         time.sleep(2)
+def remove_ad_o(browser):
+    explicit_wait(browser, 'VOEL', ["//span[contains(text(),'广告类型')]", 'xpath'])
+    remove_btns = browser.find_elements_by_class_name('text-green')
+    for item in remove_btns:
+        item.click()
+        popup_o("操作成功")
+        time.sleep(2)
+
+
+def delete_ad_o(browser):
+    delete_btn = browser.find_elements_by_xpath("//span[contains(text(),'删除')]/..")
+    for item in delete_btn:
+        item.click()
+        confirm_btn = browser.find_elements_by_xpath("//span[text()='确认']/..")
+        confirm_btn.click()
+        popup_o("操作成功")
+        time.sleep(2)
